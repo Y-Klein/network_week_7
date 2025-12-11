@@ -17,6 +17,8 @@ hosts_number = finding_the_hosts_number(mask)
 class_type = finding_the_cidr(mask,ip)
 CIDR = len(mask[:finding_the_index(mask)])
 
-
-print(mask_dec,"\n",ip_dec,"\n",network_address,"\n",broadcast_address,"\n",hosts_number,"\n",
-      class_type,"\n",CIDR)
+with open(f"subnet_info_{ip_dec}_321424855.txt","w") as file:
+    file.write(f"{format_input_ip(ip_dec)}{format_subnet_mask(mask_dec)}"
+               f"{format_classful_status(class_type)}{format_network_address(network_address)}"
+               f"{format_broadcast_address(broadcast_address)}{format_num_hosts(hosts_number)}"
+               f"{format_cidr_mask(CIDR)}")
